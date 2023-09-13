@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const {sequelize} = require('./database');
-require("./scr/models/Note");
+require("./scr/models/post");
 
 const app = express()
 
@@ -27,6 +27,7 @@ console.log('hola mundo')
 
 //configuracion servidor
 
-app.listen (4000, ()=> {
+app.listen (4000, () => {
+    sequelize.sync({force:false});
     console.log ('servidor en el puerto 4000');
 });
