@@ -1,24 +1,22 @@
-// importar express y controlador
-const { Router} = require('express')
+
+const express = require('express');
+const router = express.Router();
 const {
-        getAllPost,
-        formCreateNewPost,
-        formUpdatePost,
-        newPost,
-        updatePost,
-        deletePost
-        } = require('../scr/controllers/post.controllers')
+  getAllPost,
+  formCreateNewPost,
+  formUpdatePost,
+  newPost,
+  updatePost,
+  deletePost
+} = require('../scr/controllers/post.controllers');
 
-
-const router = Router()
-router.get('/',(req,res)=>{
-        res.send('hola mundo')
-})
-
-router.get('/', newPost)
-
-router.get('/', updatePost)
-
+// Rutas
+router.get('/', getAllPost);
+router.get('/create', formCreateNewPost);
+router.get('/edit/:id', formUpdatePost);
+router.post('/create', newPost);
+router.post('/edit/:id', updatePost);
+router.get('/delete/:id', deletePost);
 
 module.exports = router;
 

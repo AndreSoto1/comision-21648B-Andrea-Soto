@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos y títulos -->
+</head>
+<body>
+  <h1>Crear Nuevo Post</h1>
+  <form action="/crear" method="POST">
+    <label for="titulo_post">Título:</label>
+    <input type="text" id="titulo_post" name="titulo_post" required>
+    <br>
+    <label for="contenido">Contenido:</label>
+    <textarea id="contenido" name="contenido" required></textarea>
+    <br>
+    <label for="link">Enlace:</label>
+    <input type="text" id="link" name="link">
+    <br>
+    <button type="submit">Crear Post</button> <!-- Botón en lugar de enlace -->
+  </form>
+  <form action="/" method="GET">
+    <button type="submit">INICIO</button> <!-- Botón en lugar de enlace -->
+  </form>
+</body>
+</html>

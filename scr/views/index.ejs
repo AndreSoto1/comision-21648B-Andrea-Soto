@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Blog</title>
+</head>
+<body>
+  <h1>Mi Blog</h1>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li>
+        <h2><%= post.titulo_post %></h2>
+        <p><%= post.contenido %></p>
+        <a href="/editar/<%= post.id %>">Editar</a>
+        <a href="/eliminar/<%= post.id %>">Eliminar</a>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/crear">Crear nuevo post</a>
+</body>
+</html>

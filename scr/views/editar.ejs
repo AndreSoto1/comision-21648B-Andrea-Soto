@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos y títulos -->
+</head>
+<body>
+  <h1>Editar Post</h1>
+  <form action="/editar/<%= post.id %>" method="POST">
+    <label for="titulo_post">Título:</label>
+    <input type="text" id="titulo_post" name="titulo_post" value="<%= post.titulo_post %>" required>
+    <br>
+    <label for="contenido">Contenido:</label>
+    <textarea id="contenido" name="contenido" required><%= post.contenido %></textarea>
+    <br>
+    <label for="link">Enlace:</label>
+    <input type="text" id="link" name="link" value="<%= post.link %>">
+    <br>
+    <button type="submit">Guardar Cambios</button> <!-- Botón en lugar de enlace -->
+  </form>
+  <form action="/" method="GET">
+    <button type="submit">Volver al inicio</button> <!-- Botón en lugar de enlace -->
+  </form>
+</body>
+</html>
+

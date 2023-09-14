@@ -1,9 +1,26 @@
 const { sequelize } = require("../../database");
 const { DataTypes } = require("sequelize");
 
-const NoteModel = sequelize.define("post", {
-  author: DataTypes.STRING,
-  content: DataTypes.TEXT,
+const postModel = sequelize.define("post", {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  titulo_post: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  contenido: {
+    type: DataTypes.TEXT,
+  },
+  link: {
+    type: DataTypes.STRING,
+  },
+  fecha_creacion: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
 });
 
-module.exports = { NoteModel };
+module.exports = { postModel };
