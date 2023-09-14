@@ -13,7 +13,7 @@ app.use(cors())
 app.use(morgan('dev'))
 
 // rutas
-app.use(require('.router/post.router'))
+app.use(require('.routes/post.routes'))
 
 //propios 
 // error 404
@@ -27,7 +27,6 @@ console.log('hola mundo')
 
 //configuracion servidor
 
-app.listen (4000, () => {
-    sequelize.sync({force:false});
-    console.log ('servidor en el puerto 4000');
+app.listen(4000, () => {
+        console.log ('servidor en el puerto 4000');
 });

@@ -1,4 +1,5 @@
 // agregar, editar, eliminar post
+
 const newPost = (req,res)={
 
 }

@@ -8,7 +8,12 @@ const {
         updatePost,
         deletePost
         } = require('../scr/controllers/post.controllers')
+
+
 const router = Router()
+router.get('/',(req,res)=>{
+        res.send('hola mundo')
+})
 
 router.get('/', newPost)
 
