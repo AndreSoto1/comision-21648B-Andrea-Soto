@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Metadatos y títulos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/bootstrap.css">
+    <link rel="stylesheet" href="/public/bootstrap.js">
+
+    <title>Editar Post <%= post.titulo_post %> </title>
 </head>
 <body>
-  <h1>Editar Post</h1>
+  <h1>Editar Blog</h1>
   <form action="/editar/<%= post.id %>" method="POST">
     <label for="titulo_post">Título:</label>
-    <input type="text" id="titulo_post" name="titulo_post" value="<%= post.titulo_post %>" required>
+    <input type="text" name="titulo_post" value="<%= post.titulo_post %>" required>
+    <label for="titulo_post">Título:</label>
+    <input type="text" name="titulo_post" value="<%= post.titulo_post %>" required>
     <br>
     <label for="contenido">Contenido:</label>
     <textarea id="contenido" name="contenido" required><%= post.contenido %></textarea>
     <br>
     <label for="link">Enlace:</label>
-    <input type="text" id="link" name="link" value="<%= post.link %>">
+    <input type="text"  name="link" value="<%= post.link %>">
     <br>
-    <button type="submit">Guardar Cambios</button> <!-- Botón en lugar de enlace -->
+    <button type="submit">Guardar Cambios</button> 
   </form>
   <form action="/" method="GET">
-    <button type="submit">Volver al inicio</button> <!-- Botón en lugar de enlace -->
+    <button type="submit">Volver al inicio</button>
   </form>
 </body>
 </html>

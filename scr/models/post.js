@@ -17,10 +17,6 @@ const postModel = sequelize.define("post", {
   link: {
     type: DataTypes.STRING,
   },
-  fecha_creacion: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
 });
 
 module.exports = { postModel };

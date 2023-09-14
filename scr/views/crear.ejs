@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Metadatos y títulos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/bootstrap.css">
+    <link rel="stylesheet" href="/public/bootstrap.js">
+    <title>Crear Nuevo </title>
 </head>
 <body>
-  <h1>Crear Nuevo Post</h1>
-  <form action="/crear" method="POST">
-    <label for="titulo_post">Título:</label>
-    <input type="text" id="titulo_post" name="titulo_post" required>
-    <br>
-    <label for="contenido">Contenido:</label>
-    <textarea id="contenido" name="contenido" required></textarea>
-    <br>
-    <label for="link">Enlace:</label>
-    <input type="text" id="link" name="link">
-    <br>
-    <button type="submit">Crear Post</button> <!-- Botón en lugar de enlace -->
-  </form>
-  <form action="/" method="GET">
-    <button type="submit">INICIO</button> <!-- Botón en lugar de enlace -->
-  </form>
+    <h1>Crear Nuevo Blog</h1>
+    <form method="POST" action="/crear">
+        <label for="titulo">Título:</label>
+        <input type="text" placeholder="titulo_blog" name="titulo_post">
+        <label for="contenido">Contenido:</label>
+        <textarea placeholder="Contenido" name="contenido"></textarea>
+        <label for="link">link Image:</label>
+        <input type="text" name="link">
+        <button type="submit">GUARDAR</button>
+    </form>
+    <form method="GET" action="/">
+        <button type="submit">Volver al inicio</button>
+    </form>
 </body>
 </html>

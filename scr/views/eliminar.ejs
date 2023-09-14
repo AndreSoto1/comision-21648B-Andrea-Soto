@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/public/style.css">
+        <link rel="stylesheet" href="/public/bootstrap.css">
+        <link rel="stylesheet" href="/public/bootstrap.js">
+    
+        <title>Eliminar blog "<%= post.titulo_post %>"</title>
+    </head>
+<body>
+    <h1>Confirmar Eliminación</h1>
+    <p>¿Estás seguro de que deseas eliminar el blog "<%= post.titulo_post %>"?</p>
+    <form method="POST" action="/eliminar/<%= post.id %>">
+        <button type="submit">Eliminar</button>
+    </form>
+    <form method="GET" action="/blog/<%= post.id %>">
+        <button type="submit">Cancelar</button>
+    </form>
+</body>
+</html>

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/bootstrap.css">
+    <link rel="stylesheet" href="/public/bootstrap.js">
+
+    <title>Mis Blog </title>
 </head>
 <body>
-  <h1>Mi Blog</h1>
-  <ul>
-    <% posts.forEach(post => { %>
-      <li>
-        <h2><%= post.titulo_post %></h2>
-        <p><%= post.contenido %></p>
-        <a href="/editar/<%= post.id %>">Editar</a>
-        <a href="/eliminar/<%= post.id %>">Eliminar</a>
-      </li>
-    <% }); %>
-  </ul>
-  <a href="/crear">Crear nuevo post</a>
+    <h1>Mis Blogs</h1>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li>
+                <h2><a href="/blog/<%= post.id %>"><%= post.titulo_post %></a></h2>
+                <form method="GET" action="/editar/<%= post.id %>">
+                    <button type="submit">Editar</button>
+                </form>
+                <form method="GET" action="/eliminar/<%= post.id %>">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <form action="/crear" method="GET">
+        <button type="submit">Crear nuevo blog</button>
+      </form>
 </body>
 </html>
