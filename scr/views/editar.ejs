@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/style.css">
-    <link rel="stylesheet" href="/public/bootstrap.css">
-    <link rel="stylesheet" href="/public/bootstrap.js">
-
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/bootstrap.css">
     <title>Editar Post <%= post.titulo_post %> </title>
 </head>
 <body>
-  <h1>Editar Blog</h1>
-  <form action="/editar/<%= post.id %>" method="POST">
-    <label for="titulo_post">Título:</label>
-    <input type="text" name="titulo_post" value="<%= post.titulo_post %>" required>
-    <label for="titulo_post">Título:</label>
-    <input type="text" name="titulo_post" value="<%= post.titulo_post %>" required>
-    <br>
-    <label for="contenido">Contenido:</label>
-    <textarea id="contenido" name="contenido" required><%= post.contenido %></textarea>
-    <br>
-    <label for="link">Enlace:</label>
-    <input type="text"  name="link" value="<%= post.link %>">
-    <br>
-    <button type="submit">Guardar Cambios</button> 
-  </form>
-  <form action="/" method="GET">
-    <button type="submit">Volver al inicio</button>
-  </form>
+    <div class="container">
+        <h1>Editar Blog</h1>
+        <form action="/editar/<%= post.id %>" method="POST">
+            <input type="hidden" name="id" value="<%= post.id %>">
+            <div class="mb-3">
+                <label for="titulo_post" class="form-label">Título:</label>
+                <input type="text" class="form-control" name="titulo_post" value="<%= post.titulo_post %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="contenido" class="form-label">Contenido:</label>
+                <textarea class="form-control" id="contenido" name="contenido" required><%= post.contenido %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="link" class="form-label">Enlace:</label>
+                <input type="text" class="form-control" name="link" value="<%= post.link %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button> 
+        </form>
+        <form action="/" method="GET">
+            <button type="submit" class="btn btn-secondary">Volver al inicio</button>
+        </form>
+    </div>
+    <script src="/bootstrap.js"></script>
 </body>
 </html>
 

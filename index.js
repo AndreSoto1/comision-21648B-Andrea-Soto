@@ -14,14 +14,15 @@ app.use(morgan('dev'))
 
 // motor de plantilla
 app.set('view engine', 'ejs');
+
 //conf. carpeta views
 app.set('views', __dirname + '/scr/views');
+
 // conf. carpeta static
 app.set(express.static("public"));
 
 
 //configuracion servidor
-
 app.listen(4000, () => {
 
     sequelize.sync({ force: false })
