@@ -11,3 +11,4 @@
 - Editar post http://localhost:4000/post/editar/:id
 - Eliminar post http://localhost:4000/post/eliminar/:id
 
+.Variable de entorno faltante no se dio en la cursada
