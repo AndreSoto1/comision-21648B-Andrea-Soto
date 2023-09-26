@@ -9,27 +9,35 @@
 </head>
 <body>
     <div class="container">
-        <h1>Editar Blog</h1>
-        <form action="/editar/<%= post.id %>" method="POST">
+        <h1 class="titulos-todos">Editar Blog</h1>
+        <form action="/post/editar/<%= post.id %>" method="post">
             <input type="hidden" name="id" value="<%= post.id %>">
             <div class="mb-3">
-                <label for="titulo_post" class="form-label">Título:</label>
+                <label for="titulo_post" class="form-label form-titulo">Título:</label>
                 <input type="text" class="form-control" name="titulo_post" value="<%= post.titulo_post %>" required>
             </div>
             <div class="mb-3">
-                <label for="contenido" class="form-label">Contenido:</label>
+                <label for="contenido" class="form-label form-titulo">Contenido:</label>
                 <textarea class="form-control" id="contenido" name="contenido" required><%= post.contenido %></textarea>
             </div>
             <div class="mb-3">
-                <label for="link" class="form-label">Enlace:</label>
-                <input type="text" class="form-control" name="link" value="<%= post.link %>">
+                <label for="link" class="form-label form-titulo">Enlace:</label>
+                <input type="text" class="form-control" name="link" value="<%= post.link %>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button> 
-        </form>
-        <form action="/" method="GET">
-            <button type="submit" class="btn btn-secondary">Volver al inicio</button>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" onclick="history.back()">Cancelar</button>
+                </div>
+                <div>
+                    <a href="/post" class="btn btn-secondary">Inicio</a>
+                </div>
+            </div>
         </form>
     </div>
+    
     <script src="/bootstrap.js"></script>
 </body>
 </html>

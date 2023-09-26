@@ -24,8 +24,9 @@ router.get('/eliminar/:id', confirmDelete); //muestra formulario de eliminacion
 router.post('/eliminar/:id', deletePost); //confima eliminacion
 
 // Ruta para mostrar el formulario de edición de un blog
-router.get('/editar/:id', editPost); //mostrar el formulario de edición
-router.post('/editar/:id', updatePost); //actualización real en la base de datos
+router.get('/editar/:id', editPost); // Mostrar el formulario de edición
+router.post('/editar/:id', updatePost); // Procesar la actualización del blog
+
 
 // Ruta para procesar la creación de un nuevo blog
 router.get('/crear', formCreateNewPost);

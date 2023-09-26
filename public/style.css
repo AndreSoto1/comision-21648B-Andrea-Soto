@@ -1,6 +1,73 @@
 body {
-    background-color: #4ebaec;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #939094, #000000);
+    color: #fff;
+    height: 100vh;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
+.container {
+    padding: 20px;
+}
+
+@font-face {
+    font-family: 'Mooli';
+    src: url('https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:wght@300&display=swap') format('woff2'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.titulos-todos{
+    font-family: 'Mooli', sans-serif; 
+    color: white; 
+    transition: color 0.3s; 
+}
+
+/* Cambia el color del texto a negro cuando el mouse pasa por encima */
+.titulos-todos:hover {
+    color: rgb(241, 185, 227); /* Cambia el color del texto a negro al pasar el mouse por encima */
+}
+
+
+.btn-success {
+    font-size: 20px; /* Ajusta el tamaño de fuente para hacerlo más grande */
+    margin-top: 20px; /* Agrega margen superior para alejarlo del <ul> */
+}
+
+p {
+    font-family: 'Mooli', sans-serif; 
+    color: white;  
+    font-size: 30px;
+}
+
+.titulo-post{
+    color: #fff;
+}
+
+.list-group a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-contenido{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: blanchedalmond;
+
+}
+.form-titulo{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: blanchedalmond;
+
+}
+
+.mensaje-eliminar{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 184, 184);
+    
 }

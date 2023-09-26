@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/bootstrap.css">
-    <title>Crear Nuevo </title>
+    <title>Crear Nuevo</title>
 </head>
 <body>
     <div class="container">
-        <h1>Crear Nuevo Blog</h1>
-        <form method="POST" action="/crear">
+        <h1 class="titulos-todos">Crear Nuevo Blog</h1>
+        <form method="post" action="/post/crear">
             <div class="mb-3">
-                <label for="titulo" class="form-label">Título:</label>
-                <input type="text" class="form-control" placeholder="Título del blog" name="titulo_post">
+                <label for="titulo" class="form-label form-titulo">Título:</label>
+                <input type="text" class="form-control" placeholder="Título del blog" name="titulo_post" required>
             </div>
             <div class="mb-3">
-                <label for="contenido" class="form-label">Contenido:</label>
-                <textarea class="form-control" placeholder="Contenido" name="contenido"></textarea>
+                <label for="contenido" class="form-label form-titulo">Contenido:</label>
+                <textarea class="form-control" placeholder="Contenido" name="contenido" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="link" class="form-label">Enlace de la Imagen:</label>
-                <input type="text" class="form-control" name="link">
+                <label for="link" class="form-label form-titulo">Enlace de la Imagen:</label>
+                <input type="text" class="form-control" name="link" required>
             </div>
-            <button type="submit" class="btn btn-primary">GUARDAR</button>
-        </form>
-        <form method="GET" action="/">
-            <button type="submit" class="btn btn-secondary">Volver al inicio</button>
-        </form>
+            <button type="submit" class="btn btn-primary mx-2 my-2">GUARDAR</button>
+            </form>
+            <form method="get" action="/post">
+                <button type="submit" class="btn btn-secondary mx-2 my-2">Inicio</button>
+            </form>
     </div>
     <script src="/bootstrap.js"></script>
 </body>
 </html>
+

@@ -9,34 +9,37 @@
     <title>Mis Blog </title>
 </head>
 <body>
-    <div class="container">
-        <h1>Mis Blogs</h1>
-        <ul class="list-group">
-          <% posts.forEach(post => { %>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col-8">
-                  <h2><a href="/blog/<%= post.id %>"><%= post.titulo_post %></a></h2>
-                </div>
-                <div class="col-2">
-                  <form method="GET" action="/editar/<%= post.id %>">
-                    <button type="submit" class="btn btn-primary">Editar</button>
-                  </form>
-                </div>
-                <div class="col-2">
-                  <form method="GET" action="/eliminar/<%= post.id %>">
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                  </form>
-                </div>
-              </div>
-            </li>
-          <% }); %>
-        </ul>
-        <form action="/crear" method="GET">
-          <button type="submit" class="btn btn-success">Crear</button>
-        </form>
-      </div>
-      
-    <script src="/bootstrap.js"></script>
+  <div class="container">
+    <h1 class="titulos-todos">Mis Blogs</h1>
+    <ul class="list-group list-group-flush ">
+      <% allPosts.forEach((post) => { %>
+        <li class="list-group-item list-group-item-action list-group-item-primary border-light">
+          <div class="row">
+            <div class="col-md-8 " >
+              <h2 class="titulo-post"><a  href="post/blog/<%= post.id %>"><%= post.titulo_post %></a></h2>
+            </div>
+            <div class="col-md-2">
+              <form method="get" action="/post/editar/<%= post.id %>">
+                <button type="submit" class="btn btn-primary">Editar</button>
+              </form>
+            </div>
+            <div class="col-md-2">
+              <form method="get" action="post/eliminar/<%= post.id %>">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+    <form action="post/crear" method="get">
+      <button type="submit" class="btn btn-success">Crear</button>
+    </form>
+  </div>
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">comision-21648B-Andrea-Soto</p>
+</footer>
+  <script src="/bootstrap.js"></script>
+  
 </body>
 </html>

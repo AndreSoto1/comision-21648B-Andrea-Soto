@@ -7,20 +7,22 @@ require('./scr/models/post')
 const app = express()
 
 //middleware
-app.use(express.json)
-app.use(express.urlencoded({extended:false}))
-app.use(cors())
-app.use(morgan('dev'))
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(cors());
+app.use(morgan('dev'));
+
+//conf. carpeta views
+app.set("views", __dirname + "/scr/views");
+
+// conf. carpeta static
+app.use(express.static("public"));
 
 // motor de plantilla
 app.set('view engine', 'ejs');
 
-//conf. carpeta views
-app.set('views', __dirname + '/scr/views');
-
-// conf. carpeta static
-app.set(express.static("public"));
-
+// Rutas
+app.use("/post", require('./routes/post.routes'))
 
 //configuracion servidor
 app.listen(4000, () => {

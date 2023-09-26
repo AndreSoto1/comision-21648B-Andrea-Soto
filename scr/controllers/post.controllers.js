@@ -1,15 +1,13 @@
 //controladores
-
-const { Model } = require('sequelize');
 const {postModel} = require('../models/post');
  
   // Obtener todos los post
- const getAllPost = async (req, res) => {
-      const posts = await postModel.findAll();
+  const getAllPost = async (req, res) => {
+    const allPosts = await postModel.findAll();
   
-      res.render('index', { posts });
-
+    res.render('index', { allPosts });
   };
+  
   //visulizar un idPost
 
   const showPost = async (req, res) => {
@@ -39,7 +37,7 @@ const {postModel} = require('../models/post');
             const { titulo_post, contenido, link } = req.body;
             const post = await postModel.create({ titulo_post, contenido, link });
 
-            res.redirect(`/blog/${post.id}`);
+            res.redirect(`/post`);
         } catch (error) {
             console.error(error);
             res.status(500).send('Error al crear el blog');
@@ -65,24 +63,24 @@ const {postModel} = require('../models/post');
     };
     
   // Actualizar un blog boton guardar post
-    const updatePost = async (req, res) => {
-        try {
-        const postId = req.params.id;
-        const post = await postModel.findByPk(postId);
-    
+  const updatePost = async (req, res) => {
+    try {
+        const { id, titulo_post, contenido, link } = req.body;
+        const post = await postModel.findByPk(id);
+
         if (!post) {
             return res.status(404).send('Blog no encontrado');
         }
-    
-        const { titulo_post, contenido, link } = req.body;
+
         await post.update({ titulo_post, contenido, link });
-    
-        res.redirect(`/blog/${postId}`);
-        } catch (error) {
+
+        res.redirect(`/post/blog/${id}`);
+    } catch (error) {
         console.error(error);
         res.status(500).send('Error al actualizar el blog');
-        }
-    };
+    }
+};
+
     
   // Mostrar el formulario de confirmación para eliminar un blog
     const confirmDelete = async (req, res) => {
@@ -112,7 +110,7 @@ const {postModel} = require('../models/post');
         }
     
         await post.destroy();
-        res.redirect('/');
+        res.redirect(`/post`);
         } catch (error) {
         console.error(error);
         res.status(500).send('Error al eliminar el blog');

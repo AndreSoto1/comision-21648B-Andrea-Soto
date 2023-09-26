@@ -9,24 +9,26 @@
 </head>
 <body>
     <div class="container">
-        <h1><%= post.titulo_post %></h1>
+        <h1 class="titulos-todos"><%= post.titulo_post %></h1>
         <div class="row">
             <div class="col-md-8">
-                <img src="<%= post.link %>" alt="<%= post.titulo_post %>" class="img-fluid">
+                <img src="<%= post.link %>" alt="<%= post.titulo_post %>" class="img-fluid" style="max-width: 100%";>
             </div>
             <div class="col-md-4">
                 <p><%= post.contenido %></p>
-                <span>Creado: <%= post.createdAt %></span>
-                <span>Última Modificación: <%= post.updatedAt %></span>
-                <form method="GET" action="/editar/<%= post.id %>">
-                    <button type="submit" class="btn btn-primary">Editar</button>
-                </form>
-                <form method="POST" action="/eliminar/<%= post.id %>">
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
-                <form action="/" method="GET">
-                    <button type="submit" class="btn btn-secondary">Volver al inicio</button>
-                </form>
+                <span class="post-contenido">Creado: <%= post.createdAt %></span>
+                <span class="post-contenido">Última Modificación: <%= post.updatedAt %></span>
+                <div class="d-flex justify-content-between mt-3">
+                    <form method="get" action="/post/editar/<%= post.id %>">
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <form method="get" action="/post/eliminar/<%= post.id %>">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                    <form action="/post" method="GET">
+                        <button type="submit" class="btn btn-secondary">Inicio</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
